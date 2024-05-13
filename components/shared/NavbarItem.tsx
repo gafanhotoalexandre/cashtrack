@@ -9,8 +9,9 @@ import { buttonVariants } from '@/components/ui/button'
 interface NavbarItemProps {
   link: string
   label: string
+  closeSheet?: () => void
 }
-export function NavbarItem({ link, label }: NavbarItemProps) {
+export function NavbarItem({ link, label, closeSheet }: NavbarItemProps) {
   const pathname = usePathname()
   const isActive = pathname === link
 
@@ -23,6 +24,9 @@ export function NavbarItem({ link, label }: NavbarItemProps) {
           'w-full justify-start text-lg text-muted-foreground hover:text-foreground',
           isActive && 'text-foreground'
         )}
+        onClick={() => {
+          if (closeSheet) closeSheet()
+        }}
       >
         {label}
       </Link>

@@ -6,10 +6,13 @@ import { Logo } from '@/components/Logo'
 import { NavbarItem } from './NavbarItem'
 import { ThemeSwitcherButton } from './ThemeSwitcherButton'
 
+import { MobileNavbar } from './MobileNavbar'
+
 export function Navbar() {
   return (
     <>
       <DesktopNavbar />
+      <MobileNavbar />
     </>
   )
 }
